@@ -1,15 +1,16 @@
 openapi: 3.1.0
 info:
-  # Do not change the title, if the title changes, the import paths will be broken
   title: Api
   version: 0.1.0
-  description: API specification
+  description: Base Airdrop Allocation Predictor API
 servers:
   - url: /api
     description: Base API path
 tags:
   - name: health
     description: Health operations
+  - name: analysis
+    description: Wallet analysis operations
 paths:
   /healthz:
     get:
@@ -24,6 +25,63 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+
+  /analyze:
+    post:
+      operationId: analyzeWallet
+      tags: [analysis]
+      summary: Analyze a wallet for Base airdrop eligibility
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WalletAnalysisInput"
+      responses:
+        "200":
+          description: Analysis results
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WalletAnalysisResult"
+        "400":
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiError"
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiError"
+
+  /results/{address}:
+    get:
+      operationId: getResults
+      tags: [analysis]
+      summary: Get cached analysis results for a wallet
+      parameters:
+        - name: address
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Cached analysis results
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WalletAnalysisResult"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiError"
+
 components:
   schemas:
     HealthStatus:
@@ -34,3 +92,325 @@ components:
       required:
         - status
 
+    ApiError:
+      type: object
+      properties:
+        error:
+          type: string
+      required:
+        - error
+
+    WalletAnalysisInput:
+      type: object
+      required:
+        - address
+      properties:
+        address:
+          type: string
+          description: Ethereum/Base wallet address
+        xUsername:
+          type: ["string", "null"]
+          description: Optional X (Twitter) username
+
+    ScoreBreakdown:
+      type: object
+      required:
+        - activity
+        - protocol
+        - capital
+        - liquidity
+        - nft
+        - basename
+        - crossChain
+        - reputation
+        - builder
+        - consistency
+        - community
+        - sybilPenalty
+        - total
+      properties:
+        activity:
+          type: number
+        protocol:
+          type: number
+        capital:
+          type: number
+        liquidity:
+          type: number
+        nft:
+          type: number
+        basename:
+          type: number
+        crossChain:
+          type: number
+        reputation:
+          type: number
+        builder:
+          type: number
+        consistency:
+          type: number
+        community:
+          type: number
+        sybilPenalty:
+          type: number
+        total:
+          type: number
+
+    WalletStats:
+      type: object
+      required:
+        - age
+        - firstTxDate
+        - lastTxDate
+        - txCount
+        - successfulTx
+        - failedTx
+        - gasSpentEth
+        - activeDays
+        - activeWeeks
+        - activeMonths
+        - uniqueContracts
+        - uniqueProtocols
+        - walletType
+      properties:
+        age:
+          type: integer
+          description: Wallet age in days
+        firstTxDate:
+          type: ["string", "null"]
+        lastTxDate:
+          type: ["string", "null"]
+        txCount:
+          type: integer
+        successfulTx:
+          type: integer
+        failedTx:
+          type: integer
+        gasSpentEth:
+          type: number
+        activeDays:
+          type: integer
+        activeWeeks:
+          type: integer
+        activeMonths:
+          type: integer
+        uniqueContracts:
+          type: integer
+        uniqueProtocols:
+          type: integer
+        walletType:
+          type: string
+          description: "Organic User, Power User, Whale, Builder, Trader, Farmer, NFT Collector, LP Provider, Dormant User, New User"
+        ethBalance:
+          type: number
+        portfolioValueUsd:
+          type: number
+
+    BridgeStats:
+      type: object
+      required:
+        - bridgeCount
+        - bridgeVolumeEth
+        - chainSources
+        - avgBridgeSize
+        - daysAssetsOnBase
+      properties:
+        bridgeCount:
+          type: integer
+        bridgeVolumeEth:
+          type: number
+        chainSources:
+          type: array
+          items:
+            type: string
+        avgBridgeSize:
+          type: number
+        daysAssetsOnBase:
+          type: integer
+
+    ProtocolInteraction:
+      type: object
+      required:
+        - name
+        - txCount
+        - firstInteraction
+        - lastInteraction
+      properties:
+        name:
+          type: string
+        txCount:
+          type: integer
+        firstInteraction:
+          type: ["string", "null"]
+        lastInteraction:
+          type: ["string", "null"]
+        volumeEth:
+          type: number
+
+    NftStats:
+      type: object
+      required:
+        - currentHoldings
+        - mintCount
+        - hasBaseNft
+        - isOgHolder
+        - holdingDuration
+      properties:
+        currentHoldings:
+          type: integer
+        mintCount:
+          type: integer
+        hasBaseNft:
+          type: boolean
+        isOgHolder:
+          type: boolean
+        holdingDuration:
+          type: integer
+          description: Days held on average
+
+    BasenameStats:
+      type: object
+      required:
+        - hasBasename
+        - isPrimarySet
+        - isRenewed
+        - ageInDays
+      properties:
+        hasBasename:
+          type: boolean
+        basename:
+          type: ["string", "null"]
+        registrationDate:
+          type: ["string", "null"]
+        isPrimarySet:
+          type: boolean
+        isRenewed:
+          type: boolean
+        ageInDays:
+          type: integer
+
+    SybilAnalysis:
+      type: object
+      required:
+        - riskScore
+        - riskLevel
+        - signals
+      properties:
+        riskScore:
+          type: integer
+          description: 0-100 sybil risk score
+        riskLevel:
+          type: string
+          description: "Low, Medium, High, Critical"
+        signals:
+          type: array
+          items:
+            type: string
+          description: Detected sybil signals
+
+    TimelineEvent:
+      type: object
+      required:
+        - year
+        - event
+        - category
+      properties:
+        year:
+          type: integer
+        event:
+          type: string
+        category:
+          type: string
+
+    MissingOpportunity:
+      type: object
+      required:
+        - title
+        - description
+        - impact
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        impact:
+          type: string
+          description: "Low, Medium, High"
+
+    AllocationEstimate:
+      type: object
+      required:
+        - amount
+        - percentile
+        - tier
+        - confidenceScore
+        - eligible
+        - ineligibilityReasons
+      properties:
+        amount:
+          type: integer
+          description: Estimated BASE token allocation
+        percentile:
+          type: string
+          description: "Top 1%, Top 5%, Top 10%, Top 25%, Top 50%, Bottom 50%"
+        tier:
+          type: string
+          description: "S+, S, A, B, C, Not Eligible"
+        confidenceScore:
+          type: integer
+          description: 0-100 confidence percentage
+        eligible:
+          type: boolean
+        ineligibilityReasons:
+          type: array
+          items:
+            type: string
+
+    WalletAnalysisResult:
+      type: object
+      required:
+        - address
+        - analyzedAt
+        - scores
+        - walletStats
+        - bridgeStats
+        - protocols
+        - nftStats
+        - basenameStats
+        - sybilAnalysis
+        - timeline
+        - missingOpportunities
+        - allocation
+      properties:
+        address:
+          type: string
+        xUsername:
+          type: ["string", "null"]
+        analyzedAt:
+          type: string
+        scores:
+          $ref: "#/components/schemas/ScoreBreakdown"
+        walletStats:
+          $ref: "#/components/schemas/WalletStats"
+        bridgeStats:
+          $ref: "#/components/schemas/BridgeStats"
+        protocols:
+          type: array
+          items:
+            $ref: "#/components/schemas/ProtocolInteraction"
+        nftStats:
+          $ref: "#/components/schemas/NftStats"
+        basenameStats:
+          $ref: "#/components/schemas/BasenameStats"
+        sybilAnalysis:
+          $ref: "#/components/schemas/SybilAnalysis"
+        timeline:
+          type: array
+          items:
+            $ref: "#/components/schemas/TimelineEvent"
+        missingOpportunities:
+          type: array
+          items:
+            $ref: "#/components/schemas/MissingOpportunity"
+        allocation:
+          $ref: "#/components/schemas/AllocationEstimate"

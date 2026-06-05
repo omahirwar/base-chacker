@@ -1,0 +1,1121 @@
+```text
+IMPORTANT: Generate COMPLETE PRODUCTION-READY CODE, not pseudocode, not examples, not partial implementation. The output must be directly deployable to GitHub and Vercel.
+
+# BASE AIRDROP ALLOCATION PREDICTOR (STRICT MODE)
+
+Build a production-grade, ultra-detailed, strict, unofficial Base Airdrop Allocation Predictor.
+
+The goal is NOT to make everyone eligible.
+
+The goal is to perform deep wallet research and estimate:
+
+- Eligibility
+- Non-Eligibility
+- Allocation Tier
+- Estimated BASE Allocation
+- Confidence Score
+- Wallet Quality
+- Ecosystem Contribution
+- Community Contribution
+- Sybil Risk
+
+The checker must be conservative, strict, and data-driven.
+
+--------------------------------------------------
+UI REQUIREMENTS
+--------------------------------------------------
+
+Design should match modern airdrop checker UI.
+
+Dark blue theme.
+
+White cards.
+
+Smooth animations.
+
+Mobile responsive.
+
+Top Progress Bar:
+
+1. Wallet Address
+2. Check Eligibility
+3. Verify Contribution
+4. Allocation Complete
+
+NO Wallet Connect.
+
+NO Signature Requests.
+
+NO Approvals.
+
+NO Blockchain Transactions.
+
+READ-ONLY ANALYZER.
+
+Inputs:
+
+Wallet Address (Required)
+
+X Username (Optional)
+
+Example:
+
+Wallet:
+0x123456789....
+
+X Username:
+@username
+
+Button:
+
+Analyze Wallet
+
+--------------------------------------------------
+ANALYSIS FLOW
+--------------------------------------------------
+
+When user clicks Analyze:
+
+Show live progress:
+
+✓ BaseScan Analysis
+✓ LayerHub Analysis
+✓ Nomis Analysis
+✓ zkCodex Analysis
+✓ Dune Analysis
+✓ OnchainScore Analysis
+✓ Basename Analysis
+✓ NFT Analysis
+✓ Protocol Analysis
+✓ Bridge Analysis
+✓ Capital Analysis
+✓ Cross-chain Analysis
+✓ Community Analysis
+✓ Sybil Detection
+✓ Allocation Prediction
+
+--------------------------------------------------
+DATA SOURCES
+--------------------------------------------------
+
+BaseScan
+
+https://basescan.org
+
+Base Docs
+
+https://docs.base.org
+
+LayerHub
+
+https://layerhub.xyz/search?p=base
+
+Nomis
+
+https://nomis.cc/scores/base
+
+zkCodex
+
+https://zkcodex.com/base
+
+Dune Dashboard
+
+https://dune.com/pseudocode88_aux/base-airdrop
+
+OnchainScore
+
+https://onchainscore.xyz
+
+Basename
+
+https://base.org/manage-names
+
+Alchemy
+
+https://www.alchemy.com
+
+DefiLlama
+
+https://defillama.com
+
+Covalent
+
+https://www.covalenthq.com
+
+--------------------------------------------------
+CORE WALLET ANALYSIS
+--------------------------------------------------
+
+Collect:
+
+Wallet Address
+
+Wallet Age
+
+First Transaction Date
+
+Last Transaction Date
+
+Wallet Lifetime
+
+Transaction Count
+
+Successful Transactions
+
+Failed Transactions
+
+Gas Spent
+
+Average Gas
+
+Average Transaction Size
+
+Active Days
+
+Active Weeks
+
+Active Months
+
+Unique Contracts
+
+Unique Protocols
+
+Wallet Consistency
+
+Wallet Retention
+
+Wallet Dormancy
+
+Wallet Growth Pattern
+
+Wallet Loyalty
+
+--------------------------------------------------
+CAPITAL ANALYSIS
+--------------------------------------------------
+
+Read:
+
+Current Portfolio Value
+
+Historical Portfolio Value
+
+Peak Portfolio Value
+
+ETH Holdings
+
+Stablecoin Holdings
+
+Average Balance
+
+Net Inflow
+
+Net Outflow
+
+Capital Strength
+
+Capital Retention
+
+Average Wallet Size
+
+--------------------------------------------------
+BRIDGE ANALYSIS
+--------------------------------------------------
+
+Analyze:
+
+Ethereum → Base
+
+Arbitrum → Base
+
+Optimism → Base
+
+Polygon → Base
+
+zkSync → Base
+
+Other Chains → Base
+
+Read:
+
+Bridge Count
+
+Bridge Volume
+
+Bridge Frequency
+
+Average Bridge Size
+
+Bridge Loyalty
+
+Days Assets Stayed On Base
+
+--------------------------------------------------
+PROTOCOL ANALYSIS
+--------------------------------------------------
+
+Track every major Base protocol.
+
+Examples:
+
+Aerodrome
+
+Moonwell
+
+Morpho
+
+Uniswap
+
+ExtraFi
+
+FriendTech
+
+Base Native Apps
+
+For every protocol:
+
+First Interaction
+
+Last Interaction
+
+Transaction Count
+
+Volume
+
+Liquidity
+
+Borrow
+
+Lend
+
+Swaps
+
+Protocol Duration
+
+Protocol Loyalty
+
+Protocol Diversity
+
+--------------------------------------------------
+LIQUIDITY ANALYSIS
+--------------------------------------------------
+
+Read:
+
+LP Positions
+
+LP Duration
+
+LP Value
+
+Average LP Value
+
+Max LP Value
+
+Liquidity Consistency
+
+Liquidity Loyalty
+
+Liquidity Age
+
+Impermanent Loss Exposure
+
+--------------------------------------------------
+NFT ANALYSIS
+--------------------------------------------------
+
+Analyze:
+
+Current Holdings
+
+Past Holdings
+
+NFT Diversity
+
+NFT Age
+
+NFT Loyalty
+
+Holding Duration
+
+Transfer History
+
+Mint History
+
+Important NFT Contracts:
+
+0x8DC80A209A3362f0586e6C116973Bb6908170c84
+
+0xe3EB165C9ED6D6D87A59C410C8F30bABac44FeFD
+
+Scoring:
+
+Own NFT
+
+Minted NFT
+
+Long-Term Holder
+
+OG Holder
+
+Early Holder
+
+--------------------------------------------------
+BASENAME ANALYSIS
+--------------------------------------------------
+
+Analyze:
+
+Has Basename
+
+Basename Name
+
+Registration Date
+
+Expiry Date
+
+Renewal Count
+
+Primary Name
+
+Basename Age
+
+Basename Status
+
+Scoring:
+
+Has Basename
+
+Primary Set
+
+Renewed
+
+Long-Term Ownership
+
+--------------------------------------------------
+CROSS-CHAIN REPUTATION
+--------------------------------------------------
+
+Analyze:
+
+Ethereum
+
+Base
+
+Arbitrum
+
+Optimism
+
+Polygon
+
+zkSync
+
+Scroll
+
+Read:
+
+Cross-chain Activity
+
+Cross-chain Volume
+
+Cross-chain Diversity
+
+Cross-chain Reputation
+
+Wallet Age Across Chains
+
+--------------------------------------------------
+COMMUNITY CONTRIBUTION ANALYSIS
+--------------------------------------------------
+
+Optional
+
+If X Username Provided:
+
+Analyze:
+
+Base Mentions
+
+Base Chain Mentions
+
+Aerodrome Mentions
+
+Moonwell Mentions
+
+Basename Mentions
+
+Onchain Summer Mentions
+
+Original Posts
+
+Threads
+
+Engagement
+
+Follower Quality
+
+Account Age
+
+Generate:
+
+Community Contribution Score
+
+IMPORTANT:
+
+Community score must never override weak on-chain activity.
+
+Community score only acts as a bonus.
+
+Maximum influence:
+
+5-10%
+
+If X data unavailable:
+
+Skip Community Score
+
+Continue analysis normally.
+
+--------------------------------------------------
+SMART WALLET ANALYSIS
+--------------------------------------------------
+
+Detect:
+
+Safe Wallet Usage
+
+Coinbase Smart Wallet
+
+Smart Accounts
+
+Contract Deployments
+
+Verified Contracts
+
+Builder Activity
+
+Developer Signals
+
+--------------------------------------------------
+WALLET BEHAVIOR ANALYSIS
+--------------------------------------------------
+
+Detect:
+
+Organic User
+
+Power User
+
+Whale
+
+Builder
+
+Trader
+
+Farmer
+
+NFT Collector
+
+LP Provider
+
+Dormant User
+
+New User
+
+Pattern Analysis:
+
+Weekly Activity
+
+Monthly Activity
+
+Long-Term Activity
+
+Organic Growth
+
+Farmer Behavior
+
+--------------------------------------------------
+SYBIL DETECTION ENGINE
+--------------------------------------------------
+
+CRITICAL
+
+Analyze:
+
+Funding Source
+
+First Funding Wallet
+
+Exchange Funding
+
+Private Funding
+
+Shared Funding Sources
+
+Wallet Clustering
+
+Transaction Similarity
+
+Timing Similarity
+
+Circular Transfers
+
+Mass Wallet Creation
+
+Airdrop Farming Patterns
+
+Wallet Networks
+
+Generate:
+
+Sybil Risk
+
+0-100
+
+--------------------------------------------------
+STRICT ELIGIBILITY RULES
+--------------------------------------------------
+
+DO NOT make everyone eligible.
+
+Examples:
+
+Wallet Age < 30 Days
+
+OR
+
+Only 1 Protocol Used
+
+OR
+
+Sybil Risk > 70
+
+OR
+
+No Meaningful Activity
+
+OR
+
+No Ecosystem Participation
+
+OR
+
+Pure Farming Pattern
+
+Then:
+
+NOT ELIGIBLE
+
+Display reason:
+
+High Sybil Risk
+
+Low Activity
+
+Low Ecosystem Participation
+
+Wallet Too New
+
+Farmer Behavior Detected
+
+--------------------------------------------------
+SCORING ENGINE
+--------------------------------------------------
+
+Generate:
+
+Activity Score
+
+Protocol Score
+
+Capital Score
+
+Liquidity Score
+
+NFT Score
+
+Basename Score
+
+Cross-chain Score
+
+Reputation Score
+
+Builder Score
+
+Consistency Score
+
+Community Score
+
+Sybil Penalty
+
+Final Score
+
+0-100
+
+--------------------------------------------------
+SCORING WEIGHTS
+--------------------------------------------------
+
+Activity = 20%
+
+Protocol Usage = 20%
+
+Capital = 15%
+
+Liquidity = 10%
+
+NFT = 10%
+
+Basename = 5%
+
+Cross-chain = 5%
+
+Reputation = 5%
+
+Builder = 5%
+
+Consistency = 5%
+
+Community = 5%
+
+Sybil Penalty = Negative
+
+--------------------------------------------------
+TIER ENGINE
+--------------------------------------------------
+
+Generate:
+
+S+ Tier
+
+S Tier
+
+A Tier
+
+B Tier
+
+C Tier
+
+Not Eligible
+
+Example:
+
+95-100 = S+
+
+85-94 = S
+
+70-84 = A
+
+55-69 = B
+
+40-54 = C
+
+Below 40 = Not Eligible
+
+--------------------------------------------------
+ALLOCATION PREDICTION
+--------------------------------------------------
+
+Estimate:
+
+500 BASE
+
+5,000 BASE
+
+10,000 BASE
+
+50,000 BASE
+
+100,000 BASE
+
+200,000 BASE
+
+500,000 BASE
+
+Conservative only.
+
+Never inflate estimates.
+
+Reduce estimates when confidence is low.
+
+--------------------------------------------------
+ALLOCATION DISTRIBUTION
+--------------------------------------------------
+
+Predict:
+
+Top 1%
+
+Top 5%
+
+Top 10%
+
+Top 25%
+
+Top 50%
+
+Bottom 50%
+
+Map percentile to allocation ranges.
+
+--------------------------------------------------
+AIRDROP SIMULATOR
+--------------------------------------------------
+
+User can manually set:
+
+FDV:
+
+1B
+2B
+3B
+4B
+5B
+10B
+
+Supply:
+
+100M
+500M
+1B
+5B
+10B
+
+Airdrop Allocation:
+
+5%
+10%
+15%
+20%
+
+Eligible Wallet Count:
+
+50,000
+
+100,000
+
+200,000
+
+300,000
+
+400,000
+
+500,000
+
+1,000,000
+
+Recalculate:
+
+Token Price
+
+Market Cap
+
+FDV
+
+Allocation Value
+
+Estimated USD Value
+
+--------------------------------------------------
+CONFIDENCE ENGINE
+--------------------------------------------------
+
+Generate:
+
+Confidence %
+
+Based On:
+
+Data Coverage
+
+Wallet History
+
+Protocol Coverage
+
+Signal Quality
+
+Prediction Reliability
+
+--------------------------------------------------
+RESULT PAGE
+--------------------------------------------------
+
+Eligible Example:
+
+Congratulations!
+
+You are eligible for the Base Airdrop.
+
+Estimated Allocation:
+
+55,675 BASE
+
+Tier:
+
+S
+
+Confidence:
+
+87%
+
+Wallet Rank:
+
+Top 3%
+
+Sybil Risk:
+
+12%
+
+--------------------------------------------------
+NOT ELIGIBLE PAGE
+--------------------------------------------------
+
+Not Eligible
+
+This wallet does not currently meet expected requirements.
+
+Reasons:
+
+High Sybil Risk
+
+Low Activity
+
+Low Ecosystem Participation
+
+Wallet Too New
+
+Estimated Allocation:
+
+0 BASE
+
+--------------------------------------------------
+BREAKDOWN PAGE
+--------------------------------------------------
+
+Show:
+
+Activity Score
+
+Protocol Score
+
+Capital Score
+
+NFT Score
+
+Basename Score
+
+Liquidity Score
+
+Community Score
+
+Cross-chain Score
+
+Builder Score
+
+Sybil Penalty
+
+--------------------------------------------------
+MISSING OPPORTUNITIES PAGE
+--------------------------------------------------
+
+Show:
+
+No Basename
+
+No NFT Holdings
+
+No LP Activity
+
+Low Protocol Diversity
+
+No Governance Participation
+
+Low Community Participation
+
+--------------------------------------------------
+TIMELINE PAGE
+--------------------------------------------------
+
+Generate:
+
+2023
+Joined Base
+
+2024
+Used Aerodrome
+
+2024
+Provided Liquidity
+
+2025
+Registered Basename
+
+2025
+Minted NFT
+
+--------------------------------------------------
+DATABASE STRUCTURE
+--------------------------------------------------
+
+wallets
+
+scores
+
+protocols
+
+nfts
+
+basename
+
+crosschain
+
+community
+
+sybil
+
+allocation_predictions
+
+wallet_timelines
+
+research_reports
+
+--------------------------------------------------
+DEPLOYMENT REQUIREMENTS
+--------------------------------------------------
+
+Frontend:
+
+Next.js 15
+
+TypeScript
+
+Tailwind CSS
+
+shadcn/ui
+
+Backend:
+
+Next.js API Routes
+
+Server Actions
+
+Database:
+
+PostgreSQL
+
+Neon
+
+OR
+
+Supabase PostgreSQL
+
+Cache:
+
+Upstash Redis
+
+--------------------------------------------------
+VERCEL REQUIREMENTS
+--------------------------------------------------
+
+Project must deploy directly through:
+
+GitHub → Vercel
+
+No Docker
+
+No VPS
+
+No Manual Server Setup
+
+One Click Deploy
+
+Generate:
+
+README.md
+
+.env.example
+
+package.json
+
+vercel.json
+
+tailwind.config.ts
+
+next.config.ts
+
+tsconfig.json
+
+--------------------------------------------------
+README REQUIREMENTS
+--------------------------------------------------
+
+1. Clone Repo
+
+git clone REPOSITORY_URL
+
+2. Install
+
+npm install
+
+3. Add ENV
+
+4. Run
+
+npm run dev
+
+5. Deploy
+
+Import GitHub Repo
+
+Click Deploy
+
+Done
+
+--------------------------------------------------
+PRODUCTION RULES
+--------------------------------------------------
+
+No Mock Data
+
+No Fake Scores
+
+No Placeholder Logic
+
+Use Real Data Whenever Available
+
+Implement:
+
+Error Handling
+
+Caching
+
+Rate Limiting
+
+Loading States
+
+Reusable Components
+
+Modular Architecture
+
+Type Safety
+
+--------------------------------------------------
+FINAL RULE
+--------------------------------------------------
+
+This must behave like a professional wallet intelligence engine.
+
+Accuracy > Hype.
+
+If wallet is weak:
+
+NOT ELIGIBLE
+
+If confidence is low:
+
+Lower allocation estimate.
+
+Never guarantee an airdrop.
+
+Always present results as an unofficial prediction based on observed wallet behavior, ecosystem contribution, community contribution, and wallet quality.
+```
