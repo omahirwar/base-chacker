@@ -211,9 +211,20 @@ export default function Home() {
       </main>
 
       <footer className="border-t border-border/50 py-8 bg-background">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-4 text-center space-y-2">
           <p className="text-sm text-muted-foreground">
             This is an unofficial predictor. Not affiliated with Base or Coinbase. Results are estimates based on observed on-chain behavior.
+          </p>
+          <p className="text-xs text-muted-foreground/60">
+            Built by{" "}
+            <a
+              href="https://x.com/hi_vecna"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline font-medium"
+            >
+              @hi_vecna
+            </a>
           </p>
         </div>
       </footer>

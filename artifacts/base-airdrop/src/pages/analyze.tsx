@@ -831,10 +831,23 @@ function ResultsView({ data, address }: { data: WalletAnalysisResult; address: s
           </div>
 
           {/* Disclaimer */}
-          <p className="text-center text-xs text-white/40 pb-4 max-w-xl mx-auto">
-            Unofficial predictor. Not affiliated with Base or Coinbase. No wallet connection required.
-            All results are estimates based on public on-chain data. Not financial advice.
-          </p>
+          <div className="text-center pb-4 max-w-xl mx-auto space-y-1">
+            <p className="text-xs text-white/40">
+              Unofficial predictor. Not affiliated with Base or Coinbase. No wallet connection required.
+              All results are estimates based on public on-chain data. Not financial advice.
+            </p>
+            <p className="text-xs text-white/30">
+              Built by{" "}
+              <a
+                href="https://x.com/hi_vecna"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-white font-medium underline underline-offset-2 transition-colors"
+              >
+                @hi_vecna
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
